@@ -62,6 +62,14 @@ const Header: React.FC = () => {
             Auto Insurance Claims GPT
           </a>
           <a 
+            href="https://chatgpt.com/g/g-67d9f1b2c9b881918c0fac1ca6ea38ea-medical-billing-coding-gpt" 
+            className="text-sm transition-colors duration-200 bg-gradient-to-r from-cyan-300 to-blue-500 bg-clip-text text-transparent font-semibold hover:from-cyan-400 hover:to-blue-600 hover:scale-105 transform"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Medical Billing & Coding GPT
+          </a>
+          <a 
             href="#faq" 
             className="text-sm text-white/80 hover:text-white transition-colors duration-200"
           >
@@ -107,6 +115,15 @@ const Header: React.FC = () => {
               rel="noopener noreferrer"
             >
               Auto Insurance Claims GPT
+            </a>
+            <a 
+              href="https://chatgpt.com/g/g-67d9f1b2c9b881918c0fac1ca6ea38ea-medical-billing-coding-gpt" 
+              className="text-lg bg-gradient-to-r from-cyan-300 to-blue-500 bg-clip-text text-transparent font-semibold hover:from-cyan-400 hover:to-blue-600 hover:scale-105 transform"
+              onClick={() => setIsMenuOpen(false)}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Medical Billing & Coding GPT
             </a>
             <a 
               href="#faq" 

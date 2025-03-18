@@ -57,6 +57,17 @@ const Footer: React.FC = () => {
               </li>
               <li>
                 <a 
+                  href="https://chatgpt.com/g/g-67d9f1b2c9b881918c0fac1ca6ea38ea-medical-billing-coding-gpt" 
+                  className="text-white/60 hover:text-white transition-colors duration-200 flex items-center"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Medical Billing & Coding GPT
+                  <ExternalLink className="w-3 h-3 ml-1" />
+                </a>
+              </li>
+              <li>
+                <a 
                   href="#faq" 
                   className="text-white/60 hover:text-white transition-colors duration-200"
                 >
