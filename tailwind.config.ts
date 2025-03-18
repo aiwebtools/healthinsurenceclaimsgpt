@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -52,15 +53,13 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				sidebar: {
-					DEFAULT: 'hsl(var(--sidebar-background))',
-					foreground: 'hsl(var(--sidebar-foreground))',
-					primary: 'hsl(var(--sidebar-primary))',
-					'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
-					accent: 'hsl(var(--sidebar-accent))',
-					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
-					border: 'hsl(var(--sidebar-border))',
-					ring: 'hsl(var(--sidebar-ring))'
+				cyber: {
+					dark: '#050505',
+					blue: '#33C3F0',
+					purple: '#8B5CF6',
+					magenta: '#D946EF',
+					teal: '#0EA5E9',
+					gray: '#403E43'
 				}
 			},
 			borderRadius: {
@@ -84,12 +83,67 @@ export default {
 					to: {
 						height: '0'
 					}
-				}
+				},
+				'pulse-glow': {
+					'0%, 100%': { 
+						boxShadow: '0 0 0 0 rgba(139, 92, 246, 0)',
+					},
+					'50%': { 
+						boxShadow: '0 0 8px 3px rgba(139, 92, 246, 0.6)',
+					},
+				},
+				'float': {
+					'0%, 100%': { transform: 'translateY(0px)' },
+					'50%': { transform: 'translateY(-10px)' },
+				},
+				'gradient-x': {
+					'0%, 100%': {
+						'background-position': '0% 50%',
+					},
+					'50%': {
+						'background-position': '100% 50%',
+					},
+				},
+				'shimmer': {
+					'0%': {
+						'background-position': '-1000px 0',
+					},
+					'100%': {
+						'background-position': '1000px 0',
+					},
+				},
+				'scale-up': {
+					'0%': { transform: 'scale(0.97)', opacity: '0.4' },
+					'100%': { transform: 'scale(1)', opacity: '1' },
+				},
+				'fade-in': {
+					'0%': { opacity: '0' },
+					'100%': { opacity: '1' },
+				},
+				'slide-up': {
+					'0%': { transform: 'translateY(20px)', opacity: '0' },
+					'100%': { transform: 'translateY(0)', opacity: '1' },
+				},
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
-			}
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'pulse-glow': 'pulse-glow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+				'float': 'float 6s ease-in-out infinite',
+				'gradient-x': 'gradient-x 15s ease infinite',
+				'shimmer': 'shimmer 2s linear infinite',
+				'scale-up': 'scale-up 0.3s ease-out',
+				'fade-in': 'fade-in 0.5s ease-out',
+				'slide-up': 'slide-up 0.5s ease-out',
+			},
+			backgroundImage: {
+				'grid-pattern': 'radial-gradient(rgba(139, 92, 246, 0.1) 1px, transparent 0)',
+				'cyber-gradient': 'linear-gradient(to right, #33C3F0, #8B5CF6, #D946EF)',
+				'glass-gradient': 'linear-gradient(to right bottom, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02))',
+			},
+			backdropBlur: {
+				xs: '2px',
+			},
 		}
 	},
 	plugins: [require("tailwindcss-animate")],
