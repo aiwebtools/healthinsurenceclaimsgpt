@@ -2,12 +2,10 @@
 import React, { useState, useEffect } from 'react';
 import Logo from './Logo';
 import { Menu, X } from 'lucide-react';
-import { useIsMobile } from '../hooks/use-mobile';
 
 const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const isMobile = useIsMobile();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -28,11 +26,9 @@ const Header: React.FC = () => {
       }`}
     >
       <div className="container mx-auto px-6 flex justify-between items-center">
-        <div className="z-50">
-          <a href="/">
-            <Logo />
-          </a>
-        </div>
+        <a href="/" className="z-50">
+          <Logo />
+        </a>
         
         {/* Mobile menu button */}
         <button 
@@ -93,10 +89,10 @@ const Header: React.FC = () => {
             isMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
           }`}
         >
-          <nav className="flex flex-col items-center space-y-8 w-full px-6">
+          <nav className="flex flex-col items-center space-y-8">
             <a 
               href="https://chatgpt.com/g/g-67d9e1c7099881918c9c42b9571f9c9e-health-insurance-claims-gpt" 
-              className="text-lg bg-gradient-to-r from-yellow-300 to-amber-500 bg-clip-text text-transparent font-semibold hover:from-yellow-400 hover:to-amber-600 hover:scale-105 transform py-3 px-4 w-full text-center rounded-md bg-black/40 backdrop-blur-sm"
+              className="text-lg bg-gradient-to-r from-yellow-300 to-amber-500 bg-clip-text text-transparent font-semibold hover:from-yellow-400 hover:to-amber-600 hover:scale-105 transform"
               onClick={() => setIsMenuOpen(false)}
               target="_blank"
               rel="noopener noreferrer"
@@ -105,7 +101,7 @@ const Header: React.FC = () => {
             </a>
             <a 
               href="https://insuranceclaimsgpt.lovable.app/?via=aiwebtools" 
-              className="text-lg bg-gradient-to-r from-gray-300 to-gray-500 bg-clip-text text-transparent font-semibold hover:from-gray-400 hover:to-gray-600 hover:scale-105 transform py-3 px-4 w-full text-center rounded-md bg-black/40 backdrop-blur-sm"
+              className="text-lg bg-gradient-to-r from-gray-300 to-gray-500 bg-clip-text text-transparent font-semibold hover:from-gray-400 hover:to-gray-600 hover:scale-105 transform"
               onClick={() => setIsMenuOpen(false)}
               target="_blank"
               rel="noopener noreferrer"
@@ -114,21 +110,21 @@ const Header: React.FC = () => {
             </a>
             <a 
               href="#faq" 
-              className="text-lg text-white hover:text-white transition-colors duration-200 py-3 px-4 w-full text-center rounded-md bg-black/40 backdrop-blur-sm"
+              className="text-lg text-white/80 hover:text-white transition-colors duration-200"
               onClick={() => setIsMenuOpen(false)}
             >
               FAQ
             </a>
             <a 
               href="#disclaimer" 
-              className="text-lg text-white hover:text-white transition-colors duration-200 py-3 px-4 w-full text-center rounded-md bg-black/40 backdrop-blur-sm"
+              className="text-lg text-white/80 hover:text-white transition-colors duration-200"
               onClick={() => setIsMenuOpen(false)}
             >
               Disclaimer
             </a>
             <a 
               href="https://www.aiwebtools.ai" 
-              className="cyber-button-filled w-full justify-center py-3"
+              className="cyber-button-filled"
               onClick={() => setIsMenuOpen(false)}
               target="_blank"
               rel="noopener noreferrer"
