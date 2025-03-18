@@ -2,10 +2,12 @@
 import React, { useState, useEffect } from 'react';
 import Logo from './Logo';
 import { Menu, X } from 'lucide-react';
+import { useIsMobile } from '../hooks/use-mobile';
 
 const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -26,9 +28,11 @@ const Header: React.FC = () => {
       }`}
     >
       <div className="container mx-auto px-6 flex justify-between items-center">
-        <a href="/" className="z-50">
-          <Logo />
-        </a>
+        <div className="z-50">
+          <a href="/">
+            <Logo />
+          </a>
+        </div>
         
         {/* Mobile menu button */}
         <button 
