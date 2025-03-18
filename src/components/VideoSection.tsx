@@ -1,9 +1,12 @@
+
 import React, { useEffect, useRef, useState } from 'react';
 import { useIsMobile } from '../hooks/use-mobile';
+
 const VideoSection: React.FC = () => {
   const videoRef = useRef<HTMLIFrameElement>(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const isMobile = useIsMobile();
+
   useEffect(() => {
     // Create a Intersection Observer to lazy load the video
     const observer = new IntersectionObserver(entries => {
@@ -28,10 +31,11 @@ const VideoSection: React.FC = () => {
       }
     };
   }, [isMobile]);
+
   return <section className="section-padding relative overflow-hidden" id="demo-video">
       <div className="container mx-auto px-4 sm:px-6">
         <div className="max-w-3xl mx-auto text-center mb-8 sm:mb-12">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 text-white">Revolutionizing Health Insurance With Ai</h2>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 text-white">Transforming Healthcare Claims With Advanced AI</h2>
           <p className="text-white/70 text-base sm:text-lg">Insurance Claims GPT Anthem</p>
         </div>
         
@@ -55,4 +59,5 @@ const VideoSection: React.FC = () => {
       <div className="absolute -bottom-20 -left-20 w-48 sm:w-64 h-48 sm:h-64 bg-cyber-blue/20 rounded-full filter blur-[80px] sm:blur-[100px] -z-10"></div>
     </section>;
 };
+
 export default VideoSection;
