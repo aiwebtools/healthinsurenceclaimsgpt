@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import Logo from './Logo';
 import { Menu, X } from 'lucide-react';
@@ -27,6 +26,7 @@ const Header: React.FC = () => {
     >
       <div className="container mx-auto px-6 flex justify-between items-center">
         <a href="/" className="z-50">
+          {/* Render Logo directly instead of wrapping it in an anchor tag */}
           <Logo />
         </a>
         
