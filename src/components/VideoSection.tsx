@@ -39,7 +39,7 @@ const VideoSection: React.FC = () => {
       <div className="container mx-auto px-4 sm:px-6">
         <div className="max-w-3xl mx-auto text-center mb-8 sm:mb-12">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 text-white">
-            See Health Insurance Claims GPT In Action
+            Watch How It Processes Medical Claims & Generates Appeal Letters
           </h2>
           <p className="text-white/70 text-base sm:text-lg">Insurance Claims GPT Anthem</p>
         </div>
