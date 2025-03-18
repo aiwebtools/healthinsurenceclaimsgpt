@@ -47,7 +47,7 @@ const Header: React.FC = () => {
         <nav className="hidden md:flex items-center space-x-6">
           <a 
             href="https://chatgpt.com/g/g-67d9e1c7099881918c9c42b9571f9c9e-health-insurance-claims-gpt" 
-            className="text-sm text-white/80 hover:text-white transition-colors duration-200"
+            className="text-sm transition-colors duration-200 bg-gradient-to-r from-yellow-300 to-amber-500 bg-clip-text text-transparent font-semibold hover:from-yellow-400 hover:to-amber-600 hover:scale-105 transform"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -55,7 +55,7 @@ const Header: React.FC = () => {
           </a>
           <a 
             href="https://insuranceclaimsgpt.lovable.app/?via=aiwebtools" 
-            className="text-sm text-white/80 hover:text-white transition-colors duration-200"
+            className="text-sm transition-colors duration-200 bg-gradient-to-r from-gray-300 to-gray-500 bg-clip-text text-transparent font-semibold hover:from-gray-400 hover:to-gray-600 hover:scale-105 transform"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -92,7 +92,7 @@ const Header: React.FC = () => {
           <nav className="flex flex-col items-center space-y-8">
             <a 
               href="https://chatgpt.com/g/g-67d9e1c7099881918c9c42b9571f9c9e-health-insurance-claims-gpt" 
-              className="text-lg text-white/80 hover:text-white transition-colors duration-200"
+              className="text-lg bg-gradient-to-r from-yellow-300 to-amber-500 bg-clip-text text-transparent font-semibold hover:from-yellow-400 hover:to-amber-600 hover:scale-105 transform"
               onClick={() => setIsMenuOpen(false)}
               target="_blank"
               rel="noopener noreferrer"
@@ -101,7 +101,7 @@ const Header: React.FC = () => {
             </a>
             <a 
               href="https://insuranceclaimsgpt.lovable.app/?via=aiwebtools" 
-              className="text-lg text-white/80 hover:text-white transition-colors duration-200"
+              className="text-lg bg-gradient-to-r from-gray-300 to-gray-500 bg-clip-text text-transparent font-semibold hover:from-gray-400 hover:to-gray-600 hover:scale-105 transform"
               onClick={() => setIsMenuOpen(false)}
               target="_blank"
               rel="noopener noreferrer"

@@ -1,8 +1,9 @@
 
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 const VideoSection: React.FC = () => {
   const videoRef = useRef<HTMLIFrameElement>(null);
+  const [isLoaded, setIsLoaded] = useState(false);
   
   useEffect(() => {
     // Create a Intersection Observer to lazy load the video
@@ -48,17 +49,20 @@ const VideoSection: React.FC = () => {
               allowFullScreen
               className="w-full h-full"
               loading="lazy"
+              onLoad={() => setIsLoaded(true)}
             ></iframe>
           </div>
           
-          {/* Placeholder while video loads */}
-          <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-cyber-dark to-cyber-gray pointer-events-none">
-            <div className="animate-pulse rounded-full bg-white/10 p-6">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-12 h-12 text-white">
-                <polygon points="5 3 19 12 5 21 5 3"></polygon>
-              </svg>
+          {/* Placeholder while video loads - only show when not loaded */}
+          {!isLoaded && (
+            <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-cyber-dark to-cyber-gray pointer-events-none">
+              <div className="animate-pulse rounded-full bg-white/10 p-6">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-12 h-12 text-white">
+                  <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                </svg>
+              </div>
             </div>
-          </div>
+          )}
         </div>
       </div>
       
