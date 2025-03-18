@@ -10,6 +10,7 @@ import FAQ from '../components/FAQ';
 import Disclaimer from '../components/Disclaimer';
 import Footer from '../components/Footer';
 import ConsentModal from '../components/ConsentModal';
+import PageScroller from '../components/PageScroller';
 
 const Index = () => {
   useEffect(() => {
@@ -67,6 +68,9 @@ const Index = () => {
       
       {/* Consent modal */}
       <ConsentModal />
+      
+      {/* Page scroller */}
+      <PageScroller />
     </div>
   );
 };
