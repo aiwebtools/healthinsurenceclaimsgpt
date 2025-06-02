@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Mail, Phone, ExternalLink } from 'lucide-react';
 
@@ -125,7 +124,7 @@ const Footer: React.FC = () => {
               </li>
               <li>
                 <a 
-                  href="https://aiwebtools.ai/terms-of-services" 
+                  href="https://aiwebtools.lovable.app/disclaimers" 
                   className="text-white/60 hover:text-white transition-colors duration-200 flex items-center"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -152,6 +151,13 @@ const Footer: React.FC = () => {
             More AI Tools
             <ExternalLink className="w-3 h-3 ml-1" />
           </a>
+        </div>
+        
+        {/* Small disclaimer */}
+        <div className="pt-4 border-t border-white/10 mt-8">
+          <p className="text-white/30 text-xs text-center">
+            This tool is provided for informational, educational, and research purposes only.
+          </p>
         </div>
       </div>
       

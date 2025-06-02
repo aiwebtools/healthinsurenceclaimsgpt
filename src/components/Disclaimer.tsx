@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { AlertTriangle } from 'lucide-react';
 
@@ -13,6 +12,12 @@ const Disclaimer: React.FC = () => {
           </div>
           
           <div className="glassmorphism rounded-xl p-8 border border-white/10">
+            <div className="bg-yellow-400/10 border border-yellow-400/30 rounded-lg p-4 mb-6">
+              <p className="text-yellow-200 text-sm font-medium">
+                ⚠️ This tool is provided for informational, educational, and research purposes only.
+              </p>
+            </div>
+            
             <h3 className="text-xl font-semibold mb-4 text-white">Health Insurance Claims GPT Disclaimer</h3>
             
             <div className="space-y-4 text-white/80 text-sm leading-relaxed">
