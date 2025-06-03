@@ -6,43 +6,43 @@ const Features: React.FC = () => {
   const featuresList = [
     {
       icon: <FileText className="w-6 h-6 text-cyber-blue" />,
-      title: "Document Generation",
-      description: "Automatically create professional documents for claim submissions, appeals, and reimbursement calculations."
+      title: "AI Document Generation",
+      description: "AIWEBTOOLS.AI automatically creates professional documents for claim submissions, appeals, and reimbursement calculations using advanced AI technology."
     },
     {
       icon: <Database className="w-6 h-6 text-cyber-purple" />,
-      title: "Data Analysis",
-      description: "Process complex medical billing data to identify coding errors and maximize claim approvals."
+      title: "AI Data Analysis Tools",
+      description: "Process complex medical billing data with our AI WEB TOOLS to identify coding errors and maximize claim approvals."
     },
     {
       icon: <Search className="w-6 h-6 text-cyber-blue" />,
-      title: "Web Search Capabilities",
-      description: "Leverages real-time data from insurance databases, Medicare fee schedules, and policy guidelines."
+      title: "Real-time AI Search",
+      description: "Our AI tools leverage real-time data from insurance databases, Medicare fee schedules, and policy guidelines for accurate results."
     },
     {
       icon: <ClipboardCheck className="w-6 h-6 text-cyber-purple" />,
-      title: "Claim Verification",
-      description: "Thoroughly validates claims against insurance policy requirements to ensure approval."
+      title: "AI Claim Verification",
+      description: "AIWEBTOOLS.AI thoroughly validates claims against insurance policy requirements using sophisticated AI algorithms."
     },
     {
       icon: <Code className="w-6 h-6 text-cyber-blue" />,
-      title: "Medical Billing Code Identification",
-      description: "Accurately identifies ICD-10, CPT, and HCPCS codes for proper claim submission."
+      title: "Medical AI Coding",
+      description: "Our AI WEB TOOLS accurately identify ICD-10, CPT, and HCPCS codes for proper claim submission and billing."
     },
     {
       icon: <MessageSquare className="w-6 h-6 text-cyber-purple" />,
-      title: "Appeals Automation",
-      description: "Generates legally-sound appeal letters with proper medical justification and references."
+      title: "AI Appeals Automation",
+      description: "Generate legally-sound appeal letters with proper medical justification using AIWEBTOOLS.AI advanced algorithms."
     },
     {
       icon: <FileDown className="w-6 h-6 text-cyber-blue" />,
-      title: "Insurance Policy Lookup",
-      description: "Searches and interprets coverage rules from major insurance providers."
+      title: "AI Policy Lookup Tools",
+      description: "Search and interpret coverage rules from major insurance providers with our intelligent AI WEB TOOLS platform."
     },
     {
       icon: <ShieldCheck className="w-6 h-6 text-cyber-purple" />,
-      title: "Automated Cost Estimation",
-      description: "Calculates expected reimbursements and out-of-pocket costs with high accuracy."
+      title: "AI Cost Estimation",
+      description: "Calculate expected reimbursements and out-of-pocket costs with high accuracy using AIWEBTOOLS.AI technology."
     }
   ];
 
@@ -51,13 +51,13 @@ const Features: React.FC = () => {
       <div className="container mx-auto px-6">
         <div className="max-w-3xl mx-auto text-center mb-16">
           <div className="inline-block mb-4 px-3 py-1 rounded-full bg-cyber-blue/10 border border-cyber-blue/30 text-cyber-blue text-xs font-medium">
-            Powerful Capabilities
+            AIWEBTOOLS.AI - Leading AI WEB TOOLS
           </div>
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
-            How Health Insurance Claims GPT Works
+            How AI WEB TOOLS from AIWEBTOOLS.AI Work
           </h2>
           <p className="text-white/70 text-lg">
-            Our AI assistant combines advanced technologies to simplify the complex world of health insurance claims.
+            Our AI WEB TOOLS platform combines advanced AI technologies to simplify the complex world of health insurance claims, medical billing, and auto insurance processing.
           </p>
         </div>
         
@@ -84,7 +84,7 @@ const Features: React.FC = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Try Health Insurance Claims GPT
+            Access AIWEBTOOLS.AI Platform
           </a>
         </div>
       </div>

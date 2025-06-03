@@ -8,15 +8,15 @@ const HeroSection: React.FC = () => {
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto text-center">
           <div className="inline-block mb-4 px-3 py-1 rounded-full bg-cyber-purple/10 border border-cyber-purple/30 text-cyber-purple text-xs font-medium">
-            AI-Powered Health Insurance Assistant
+            AIWEBTOOLS.AI - #1 AI WEB TOOLS Platform
           </div>
           
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white via-white to-white/80">
-            Maximize Your Health Insurance Claims With AI
+            AI WEB TOOLS: Maximize Health Insurance Claims With AI
           </h1>
           
           <p className="text-lg md:text-xl text-white/70 mb-8 max-w-3xl mx-auto">
-            Health Insurance Claims GPT expertly handles assessments, calculates costs, and generates accurate reports to ensure you get the maximum reimbursement for all your healthcare expenses.
+            AIWEBTOOLS.AI provides the most advanced AI WEB TOOLS for health insurance claims. Our Health Insurance Claims GPT expertly handles assessments, calculates costs, and generates accurate reports to ensure you get the maximum reimbursement for all your healthcare expenses.
           </p>
           
           <div className="flex flex-col sm:flex-row justify-center gap-4 mb-12">
@@ -33,7 +33,7 @@ const HeroSection: React.FC = () => {
               href="#how-it-works" 
               className="cyber-button"
             >
-              Learn How It Works
+              Explore AI WEB TOOLS
             </a>
           </div>
         </div>
@@ -43,23 +43,23 @@ const HeroSection: React.FC = () => {
           {[
             {
               icon: <Shield className="w-5 h-5 text-cyber-blue" />,
-              title: "HIPAA Compliant",
-              description: "Your health data is secure with full HIPAA and legal compliance."
+              title: "HIPAA Compliant AI Tools",
+              description: "Your health data is secure with full HIPAA and legal compliance from AIWEBTOOLS.AI."
             },
             {
               icon: <FileCheck className="w-5 h-5 text-cyber-purple" />,
-              title: "Professional Reports",
-              description: "Generate downloadable claim documents and appeal letters."
+              title: "Professional AI Reports",
+              description: "Generate downloadable claim documents and appeal letters with our AI WEB TOOLS."
             },
             {
               icon: <Search className="w-5 h-5 text-cyber-blue" />,
-              title: "Policy Analysis",
-              description: "Automatic search for updated policy guidelines and rules."
+              title: "AI Policy Analysis",
+              description: "Automatic search for updated policy guidelines using advanced AI tools technology."
             },
             {
               icon: <Calculator className="w-5 h-5 text-cyber-purple" />,
-              title: "Cost Estimation",
-              description: "Accurate medical cost calculations with specialized data."
+              title: "AI Cost Estimation",
+              description: "Accurate medical cost calculations with specialized AI data from AIWEBTOOLS.AI."
             }
           ].map((feature, index) => (
             <div 
