@@ -140,7 +140,7 @@ const Footer: React.FC = () => {
         
         <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center">
           <p className="text-white/40 text-sm mb-4 md:mb-0">
-            © 2025 <a href="https://www.aiwebtools.ai" className="hover:text-white transition-colors duration-200">AI WEB TOOLS LLC (AIWEBTOOLS.AI)</a> - Leading AI WEB TOOLS Platform. All rights reserved.
+            © 2025 <a href="https://aiwebtools.lovable.app/?via=aiwebtools" className="hover:text-white transition-colors duration-200" target="_blank" rel="noopener noreferrer">AI WEB TOOLS LLC (AIWEBTOOLS.AI)</a> - Leading AI WEB TOOLS Platform. All rights reserved.
           </p>
           
           <a 
