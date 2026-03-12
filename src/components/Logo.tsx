@@ -33,7 +33,7 @@ const Logo: React.FC = () => {
         </div>
       </div>
       <div className="mt-1 text-[10px] text-gray-400 tracking-wide">
-        Presented by <a href="https://www.aiwebtools.ai" className="text-cyber-blue hover:underline transition-all duration-200">AiWebTools.Ai</a>
+        Presented by <a href="https://aiwebtools.lovable.app/?via=aiwebtools" className="text-cyber-blue hover:underline transition-all duration-200" target="_blank" rel="noopener noreferrer">AiWebTools.Ai</a>
       </div>
     </div>
   );

@@ -144,7 +144,7 @@ const Footer: React.FC = () => {
           </p>
           
           <a 
-            href="https://www.aiwebtools.ai" 
+            href="https://aiwebtools.lovable.app/?via=aiwebtools" 
             className="cyber-button inline-flex items-center rounded-full"
             target="_blank"
             rel="noopener noreferrer"

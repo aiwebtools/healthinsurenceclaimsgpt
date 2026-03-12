@@ -140,7 +140,7 @@ const Header: React.FC = () => {
               Disclaimer
             </a>
             <a 
-              href="https://www.aiwebtools.ai" 
+              href="https://aiwebtools.lovable.app/?via=aiwebtools" 
               className="cyber-button-filled"
               onClick={() => setIsMenuOpen(false)}
               target="_blank"
