@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import Logo from './Logo';
 import { Menu, X } from 'lucide-react';
 
@@ -8,31 +8,63 @@ const Header: React.FC = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollPosition = window.scrollY;
-      setIsScrolled(scrollPosition > 50);
+      setIsScrolled(window.scrollY > 50);
     };
-
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  // Lock body scroll when menu is open
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => { document.body.style.overflow = ''; };
+  }, [isMenuOpen]);
+
+  const closeMenu = useCallback(() => setIsMenuOpen(false), []);
+
+  const navLinks = [
+    {
+      href: "https://chatgpt.com/g/g-67d9e1c7099881918c9c42b9571f9c9e-health-insurance-claims-gpt",
+      label: "Health Insurance Claims GPT",
+      gradient: "from-yellow-300 to-amber-500 hover:from-yellow-400 hover:to-amber-600",
+      external: true,
+    },
+    {
+      href: "https://insuranceclaimsgpt.lovable.app/?via=aiwebtools",
+      label: "Auto Insurance Claims GPT",
+      gradient: "from-gray-300 to-gray-500 hover:from-gray-400 hover:to-gray-600",
+      external: true,
+    },
+    {
+      href: "https://medicalbillinggpt.lovable.app/?via=aiwebtools",
+      label: "Medical Billing & Coding GPT",
+      gradient: "from-cyan-300 to-blue-500 hover:from-cyan-400 hover:to-blue-600",
+      external: true,
+    },
+    { href: "#faq", label: "FAQ", external: false },
+    { href: "#disclaimer", label: "Disclaimer", external: false },
+  ];
 
   return (
     <header 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled 
-          ? 'py-3 bg-cyber-dark/80 backdrop-blur-md shadow-md' 
-          : 'py-5 bg-transparent'
+          ? 'py-2 sm:py-3 bg-cyber-dark/80 backdrop-blur-md shadow-md' 
+          : 'py-3 sm:py-5 bg-transparent'
       }`}
     >
-      <div className="container mx-auto px-6 flex justify-between items-center">
-        <a href="/" className="z-50">
-          {/* Render Logo directly instead of wrapping it in an anchor tag */}
+      <div className="container mx-auto px-4 sm:px-6 flex justify-between items-center">
+        <a href="/" className="z-50 shrink-0">
           <Logo />
         </a>
         
         {/* Mobile menu button */}
         <button 
-          className="md:hidden z-50"
+          className="md:hidden z-50 p-2 -mr-2 touch-manipulation"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
         >
@@ -44,46 +76,24 @@ const Header: React.FC = () => {
         </button>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-6">
-          <a 
-            href="https://chatgpt.com/g/g-67d9e1c7099881918c9c42b9571f9c9e-health-insurance-claims-gpt" 
-            className="text-sm transition-colors duration-200 bg-gradient-to-r from-yellow-300 to-amber-500 bg-clip-text text-transparent font-semibold hover:from-yellow-400 hover:to-amber-600 hover:scale-105 transform"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Health Insurance Claims GPT
-          </a>
-          <a 
-            href="https://insuranceclaimsgpt.lovable.app/?via=aiwebtools" 
-            className="text-sm transition-colors duration-200 bg-gradient-to-r from-gray-300 to-gray-500 bg-clip-text text-transparent font-semibold hover:from-gray-400 hover:to-gray-600 hover:scale-105 transform"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Auto Insurance Claims GPT
-          </a>
-          <a 
-            href="https://medicalbillinggpt.lovable.app/?via=aiwebtools" 
-            className="text-sm transition-colors duration-200 bg-gradient-to-r from-cyan-300 to-blue-500 bg-clip-text text-transparent font-semibold hover:from-cyan-400 hover:to-blue-600 hover:scale-105 transform"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Medical Billing & Coding GPT
-          </a>
-          <a 
-            href="#faq" 
-            className="text-sm text-white/80 hover:text-white transition-colors duration-200"
-          >
-            FAQ
-          </a>
-          <a 
-            href="#disclaimer" 
-            className="text-sm text-white/80 hover:text-white transition-colors duration-200"
-          >
-            Disclaimer
-          </a>
+        <nav className="hidden md:flex items-center space-x-4 lg:space-x-6">
+          {navLinks.map((link) => (
+            <a
+              key={link.label}
+              href={link.href}
+              className={
+                link.gradient
+                  ? `text-xs lg:text-sm transition-colors duration-200 bg-gradient-to-r ${link.gradient} bg-clip-text text-transparent font-semibold hover:scale-105 transform`
+                  : "text-xs lg:text-sm text-white/80 hover:text-white transition-colors duration-200"
+              }
+              {...(link.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+            >
+              {link.label}
+            </a>
+          ))}
           <a 
             href="https://aiwebtools.lovable.app/?via=aiwebtools" 
-            className="cyber-button-filled"
+            className="cyber-button-filled text-xs lg:text-sm whitespace-nowrap"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -91,58 +101,33 @@ const Header: React.FC = () => {
           </a>
         </nav>
 
-        {/* Mobile Navigation */}
+        {/* Mobile Navigation Overlay */}
         <div 
-          className={`fixed inset-0 bg-cyber-dark/95 backdrop-blur-lg flex flex-col items-center justify-center transition-all duration-300 ${
+          className={`fixed inset-0 bg-cyber-dark/95 backdrop-blur-lg flex flex-col items-center justify-center transition-opacity duration-200 md:hidden ${
             isMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
           }`}
+          style={{ zIndex: 40 }}
         >
-          <nav className="flex flex-col items-center space-y-8">
-            <a 
-              href="https://chatgpt.com/g/g-67d9e1c7099881918c9c42b9571f9c9e-health-insurance-claims-gpt" 
-              className="text-lg bg-gradient-to-r from-yellow-300 to-amber-500 bg-clip-text text-transparent font-semibold hover:from-yellow-400 hover:to-amber-600 hover:scale-105 transform"
-              onClick={() => setIsMenuOpen(false)}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Health Insurance Claims GPT
-            </a>
-            <a 
-              href="https://insuranceclaimsgpt.lovable.app/?via=aiwebtools" 
-              className="text-lg bg-gradient-to-r from-gray-300 to-gray-500 bg-clip-text text-transparent font-semibold hover:from-gray-400 hover:to-gray-600 hover:scale-105 transform"
-              onClick={() => setIsMenuOpen(false)}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Auto Insurance Claims GPT
-            </a>
-            <a 
-              href="https://medicalbillinggpt.lovable.app/?via=aiwebtools" 
-              className="text-lg bg-gradient-to-r from-cyan-300 to-blue-500 bg-clip-text text-transparent font-semibold hover:from-cyan-400 hover:to-blue-600 hover:scale-105 transform"
-              onClick={() => setIsMenuOpen(false)}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Medical Billing & Coding GPT
-            </a>
-            <a 
-              href="#faq" 
-              className="text-lg text-white/80 hover:text-white transition-colors duration-200"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              FAQ
-            </a>
-            <a 
-              href="#disclaimer" 
-              className="text-lg text-white/80 hover:text-white transition-colors duration-200"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Disclaimer
-            </a>
+          <nav className="flex flex-col items-center space-y-6 w-full px-8 max-w-sm">
+            {navLinks.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                className={
+                  link.gradient
+                    ? `text-base sm:text-lg bg-gradient-to-r ${link.gradient} bg-clip-text text-transparent font-semibold hover:scale-105 transform text-center`
+                    : "text-base sm:text-lg text-white/80 hover:text-white transition-colors duration-200 text-center"
+                }
+                onClick={closeMenu}
+                {...(link.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+              >
+                {link.label}
+              </a>
+            ))}
             <a 
               href="https://aiwebtools.lovable.app/?via=aiwebtools" 
-              className="cyber-button-filled"
-              onClick={() => setIsMenuOpen(false)}
+              className="cyber-button-filled w-full max-w-xs text-center"
+              onClick={closeMenu}
               target="_blank"
               rel="noopener noreferrer"
             >
